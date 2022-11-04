@@ -1,0 +1,805 @@
+/* Общие css стили */
+*, *:after, *:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+
+   transition: .2s ease-in-out;
+}
+::-moz-selection {
+    color:#ffffff;background:#b98e00;
+}
+::selection {
+    color:#ffffff;background:#b98e00;
+}
+ul.menu {
+
+   list-style: none; 
+}
+a {
+   text-decoration: none;
+   outline: none;
+}
+
+img {
+   max-width: 100%;
+}
+
+body {
+   height: 100%;
+   font-family: 'Segoe UI';
+   font-size: 14px;
+   background-image: url("../img/Фон.png");
+   background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+   line-height: 1.2;
+}
+/* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
+/*header:after, .container:after, footer:after, li:after {
+   content: "";
+   display: table;
+
+   clear: both;
+} */
+/* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 90%;
+   padding: 0 15px;
+}
+
+/* Стили для шапки и её содержимого */
+header {
+   width: 100%;
+   padding: 15px 0;
+   margin-bottom: 30px;
+   clear: both;
+   overflow: hidden;
+}
+/* логотип */
+
+.logo {
+   display: block;
+   float: left;
+   max-width: 250px;
+}
+/* меню */
+#menu {
+   float: left;
+   margin-left: 5%;
+   font-size: 18px;
+}
+#menu li {
+   display: inline-block;
+   margin-right: 30px;
+}
+#menu a {
+   color: #111;
+
+   text-transform: uppercase; 
+   letter-spacing: 1px;
+   font-weight: 600;
+   display: block;
+   line-height: 40px;
+}
+#menu a:hover {
+   color: #b98e00;
+}
+
+.info-header-block {
+display: block;
+float:right;
+margin-right: 0;
+font-size: 25px;
+margin-top: 20px;
+margin-bottom: 5px;
+}
+.header-hor-line {
+display: block;
+float: right;
+}
+.info-phone-header-block {
+display: block;
+font-size: 25px;
+float: right;
+}
+/* кнопка переключения меню, появляющаяся при ширине 768px */
+.nav-toggle {
+   display: none;
+   position: relative;
+   float: right;
+   width: 40px;
+   height: 40px;
+   margin-left: 20px;
+   background: black;
+   border-radius: 6px;
+   cursor: pointer;
+}
+.nav-toggle span {
+   display: block;
+   position: absolute;
+   top: 19px;
+   left: 8px;
+   right: 8px;
+   height: 2px;
+   background: white;
+}
+.nav-toggle span:before, .nav-toggle span:after {
+   content: "";
+   position: absolute;
+   display: block;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: white;
+}
+.nav-toggle span:before {
+   top: -10px;
+}
+.nav-toggle span:after {
+   bottom: -10px;
+}
+/* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
+#menu.active {
+   max-height: 166px;
+}
+/* отмена обтекания после некоторых эл-тов в шапке */
+/*.logo:before, #menu:before, .info-header-block:before, .header-hor-line:before, .info-phone-header-block:before {
+   clear: right;
+}
+/* Стили для основного контента */
+.content-list {
+   font-size: 25px;
+   padding-top: 150px;
+   padding-bottom: 50px;
+   padding-left: 200px;
+}
+.content-list-item:hover {
+   list-style-type: disc;
+}
+/* Стили для нижнего колонтитула */
+footer {
+   padding: 30px 0;
+   height: 20px;
+   background: black;
+   color: white;
+}
+.footer-col {
+   float: left;
+   font-size: 15px;
+   display: block;
+   transform: translateY(-50%);
+}
+
+/* Стили картинок футера и нижней линии*/
+.foooter-hor-line {
+
+}
+.footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+.footer-img-item {
+   margin-bottom: 15px;
+   margin-left: 15px;
+   margin-right: 15px;
+   max-width: 250px;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   float: left;
+}
+.footer-img-item:hover {
+   transform: scale(1.1);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.25), 0 20px 20px rgba(0,0,0,0.22);
+}
+
+ /*Медиа-запросы*/
+@media (min-width: 1200px) {
+   .container {
+      max-width: 1626px;
+   }
+   .content-list {
+      padding-top: 450px;
+      padding-bottom: 260px;
+   }
+}
+/* Medium screen : 992px. */
+
+@media only screen and (min-width: 1280px) and (max-width: 1600px) {
+    /* Header */ 
+   #menu {
+   
+   
+   margin-left: 5%;
+   }
+   #menu a {
+   
+   }
+   .header-hor-line {
+     max-width: 75%;
+     margin-left: 5%;
+   }
+   .info-header-block {
+    
+   }
+   .info-phone-header-block {
+   
+   }
+   /* Main cooontent */
+   .content-list {
+      padding-left: 80px;
+      padding-top: 600px;
+      padding-bottom: 250px;
+   }
+   /* Footer */
+   .footer-img-list {
+ 
+}
+.footer-img-item {
+
+}
+.footer-col {
+   margin-left: 100px;
+}
+}
+
+/* Tablet :768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  /*  Header  */
+  .header-hor-line {
+
+max-width: 75%;
+  }
+  /* Content */
+  .content-list {
+      padding-left: 50px;
+      padding-top: 600px;
+      padding-bottom: 250px;
+  }
+    /* Footer */
+.footer-img-item {
+
+}
+.footer-col {
+   margin-left: 100px;
+}
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (max-width: 767px) {
+   .header-section {
+      overflow: visible;
+      padding: 23px 0;
+   }
+   .header-section .container {
+      position: relative;
+   }
+   .site-logo {
+      float: none;
+      padding-top: 0;
+   }
+   .main-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 24px);
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      z-index: 999;
+   }
+   .main-menu ul li {
+      display: block;
+      border-bottom: 1px solid #ececec;
+   }
+   .main-menu ul li a {
+      margin-left: 0;
+      color: #131313;
+      padding: 13px 26px;
+   }
+   .nav-switch {
+      color: #fff;
+      display: block;
+      float: right;
+      cursor: pointer;
+      font-size: 25px;
+   }
+   .footer-section {
+      padding: 30px 0 20px;
+      text-align: center;
+   }
+   .footer-menu,
+   .copyright {
+      float: none;
+   }
+   .copyright {
+      padding-top: 15px;
+   }
+}
+
+/* Medium Mobile :480px. */
+
+@media only screen and (max-width: 576px) {
+
+}
+
+/* Small Mobile :320px. */
+
+@media only screen and (max-width: 479px) {
+   .ln-title {
+      display: none;
+   }
+   .footer-widget {
+      padding: 40px 15px 7px;
+   }
+}
+ /*
+@media screen and (max-width: 2560px) and (min-width: 2220px) {
+ Header 
+.logo {
+max-width: 350px;
+}
+#menu a {
+   font-size: 25px;
+}
+.header-hor-line {
+   /*width: 85%;
+}
+.info-header-block {
+   font-size: 30px;
+   margin-top: 40px;
+}
+.info-phone-header-block {
+   font-size: 30px;
+}
+/* Content 
+.content-list {
+   padding-top: 450px;
+   padding-bottom: 350px;
+   padding-left: 200px;
+}
+.content-list-item {
+   font-size: 30px;
+}
+/* Footer 
+.footer-img-item {
+   max-width: 300px;
+}
+.footer-col {
+   font-size: 20px;
+}
+}
+@media (max-width: 1440px) {
+.logo {
+
+}
+.header-hor-line {
+   width: 75%;
+}
+/* Main cooontent 
+   .content-list {
+      padding-left: 50px;
+      padding-top: 200px;
+      padding-bottom: 550px;
+   }
+
+}
+@media (max-width: 1024px) {
+   /* Header 
+   .logo {
+   
+   }
+   #menu {
+      position: absolute;
+   margin-top: 170px;
+   margin-left: 310px;
+   }
+   #menu a {
+   font-size: 15px;
+   }
+   .header-hor-line {
+      width: 65%;
+   }
+   .info-header-block {
+      margin-top: 30px;
+      font-size: 20px;
+      margin-right: 0px;
+   }
+   .info-phone-header-block {
+      font-size: 20px;
+
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-left: 50px;
+      padding-top: 200px;
+      padding-bottom: 500px;
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+}
+.footer-img-item {
+   margin-left: 10px;
+   margin-right: 10px;
+   max-width: 200px;
+}
+}
+@media (max-width: 768px) {
+   /* Header 
+   .logo {
+   max-width: 250px;
+   }
+   /* показываем кнопку для переключения верхней навигации 
+   .nav-toggle {
+      display: block;
+      top: 50px;
+   }
+   header {
+      padding: 10px 0;
+   }
+   /* Скрывающееся меню*/
+   /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта 
+   #menu {
+      max-height: 0;
+      background: black;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+   }
+   /* делаем элементы списка блочными, чтобы они располагались друг под другом 
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+      margin-right: 0;
+   }
+   #menu a {
+      color: white;
+   }
+   /* .Скрывающееся меню. 
+   .header-hor-line {
+      width: 55%;
+   }
+   .info-header-block {
+      margin-top: 30px;
+      font-size: 20px;
+      margin-right: 0px;
+   }
+   .info-phone-header-block {
+      margin-right:-60px;
+      
+      font-size: 20px;
+
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-left: 50px;
+      padding-top: 200px;
+      padding-bottom: 500px;
+   }
+   .content-list-item {
+
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+}
+.footer-img-item {
+   margin-left: 10px;
+   margin-right: 10px;
+   max-width: 200px;
+}
+}
+
+@media (max-width: 480px) {
+    /* Header 
+    .logo {
+   max-width: 150px;
+   margin-top: 10px;
+   }
+   .header-hor-line {
+      width: 55%;
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-bottom: 0px;
+      padding-top: 200px;
+      padding-bottom: 500px;
+   }
+   .content-list-item {
+
+   font-size: 14px;
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+}
+.footer-img-item {
+   margin-left: 10px;
+   margin-right: 10px;
+   max-width: 200px;
+}
+}
+@media (max-width: 425px) {
+   .container {
+    
+   }
+   /* Header 
+   .logo {
+
+   }
+   .header-hor-line {
+      display: none;
+   }
+   /* показываем кнопку для переключения верхней навигации 
+   .nav-toggle {
+      display: block;
+      top: 50px;
+   }
+   header {
+      padding: 10px 0;
+   }
+   /* Скрывающееся меню
+   /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта 
+   #menu {
+      max-height: 0;
+      background: black;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+   }
+   /* делаем элементы списка блочными, чтобы они располагались друг под другом 
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+   }
+   #menu a {
+      color: white;
+   }
+   /* .Скрывающееся меню. 
+   .header-hor-line {
+      width: 55%;
+   }
+   .info-header-block {
+      margin-top: 30px;
+      font-size: 20px;
+      margin-right: 0px;
+   }
+   .info-phone-header-block {
+      margin-right:-60px;
+      
+      font-size: 20px;
+
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-left: 50px;
+      padding-top: 400px;
+      padding-bottom: 600px;
+   }
+   .content-list li {
+      margin-bottom: 10px;
+   }
+   .content-list-item {
+   font-size: 20px;
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+  
+}
+.footer-img-item {
+   margin-left: 10px;
+   margin-right: 10px;
+   max-width: 200px;
+}
+}
+@media (max-width: 375px) {
+   /* Header 
+   .logo {
+      margin-top: 0;
+   max-width: 150px;
+   }
+   .header-hor-line {
+   display: none;
+   }
+   /* показываем кнопку для переключения верхней навигации 
+   .nav-toggle {
+      display: block;
+      top: 160px;
+      left: 130px;
+   }
+   header {
+      padding: 10px 0;
+   }
+   /* Скрывающееся меню
+   /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта 
+   #menu {
+      max-height: 0;
+      background: black;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+   }
+   /* делаем элементы списка блочными, чтобы они располагались друг под другом 
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+      margin-right: 0;
+   }
+   #menu a {
+      color: white;
+   }
+   /* .Скрывающееся меню. 
+   .header-hor-line {
+      width: 55%;
+   }
+   .info-header-block {
+      margin-top: 13px;
+      font-size: 15px;
+      margin-right: 0px;
+   }
+   .info-phone-header-block {
+      margin-right: 0;
+      
+      font-size: 15px;
+
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-left: 20px;
+      padding-top: 400px;
+      padding-bottom: 650px;
+   }
+   .content-list-item {
+   font-size: 20px;
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+}
+.footer-img-item {
+   margin-left: 0px;
+   margin-right: 0px;
+   max-width: 200px;
+}
+.footer-img-item:link {
+   width: 90%;
+   position: absolute;
+}
+}
+@media (max-width: 320px) {
+.logo {
+
+}
+.header-hor-line {
+   display: none;
+}
+
+
+
+
+   /* Header 
+   /* показываем кнопку для переключения верхней навигации 
+   .nav-toggle {
+      display: block;
+      top: 50px;
+   }
+   header {
+      padding: 10px 0;
+   }
+   /* Скрывающееся меню
+   /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта 
+   #menu {
+      max-height: 0;
+      background: black;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+   }
+   /* делаем элементы списка блочными, чтобы они располагались друг под другом 
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+      margin-right: 0;
+   }
+   #menu a {
+      color: white;
+   }
+   /* .Скрывающееся меню. 
+   .header-hor-line {
+      width: 55%;
+   }
+   .info-header-block {
+      margin-top: 30px;
+      font-size: 20px;
+      margin-right: 0px;
+   }
+   .info-phone-header-block {
+      margin-right:-60px;
+      
+      font-size: 20px;
+
+   }
+   /* Main cooontent 
+   .content-list {
+      padding-left: 50px;
+      padding-top: 200px;
+      padding-bottom: 500px;
+   }
+   .content-list-item {
+
+   }
+   /* Footer 
+   .footer-img-list {
+   padding-top: 25px;
+   margin-bottom: 25px;
+   margin-top: 10px;
+   width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+}
+.footer-img-item {
+   margin-left: 10px;
+   margin-right: 10px;
+   max-width: 200px;
+}
+}*/
